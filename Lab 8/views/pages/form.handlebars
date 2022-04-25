@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+<article>
+	<p>This website will help you find any show information you want to know
+		about. It is very simple. You just have write the show name and bam you will
+		have all the details. It's that Simple!!!</p>
+	<form action='/searchshows' method='POST' class='form-text'>
+		<div class='formGroup'>
+			<label for='show-name'>
+				Show Name :
+			</label>
+			<input
+				type='text'
+				id='show-name'
+				name='showSearchTerm'
+				value='{{oldData.showSearchTerm}}'
+			/>
+			<br />
+			<br />
+		</div>
+		<div class='formGroup'>
+
+			<button type='submit'>Show Search</button>
+		</div>
+	</form>
+	{{#if hasErrors}}
+		<ul class='error-list'>
+			{{#each errors}}
+				<li>
+					{{this}}
+				</li>
+			{{/each}}
+		</ul>
+	{{/if}}
+</article>

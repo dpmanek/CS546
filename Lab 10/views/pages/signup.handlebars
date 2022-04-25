@@ -1,0 +1,26 @@
+<div class='container'>
+	<form action='/signup' method='POST' id='signup-form'>
+		<label for='username'>Username:</label>
+		<input type='text' id='username' name='username' required />
+		<br />
+		<br />
+
+		<label for='password'>Password:</label>
+		<input type='password' id='password' name='password' required />
+		<br /><br />
+		<button class='button-5' type='submit' value='Submit'>Submit</button>
+		<br />
+		<a href='/'>Already have an account? Click here to log-in</a>
+	</form>
+
+	{{#if hasErrors}}
+		<h2>Errors:</h2>
+		<ul class='error-list'>
+			{{#each errors}}
+				<li>
+					{{this}}
+				</li>
+			{{/each}}
+		</ul>
+	{{/if}}
+</div>

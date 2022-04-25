@@ -1,0 +1,12 @@
+{
+  "name": "cs-546-lab-2",
+  "version": "1.0.0",
+  "description": "Familiarizing with NodeJS Modules, further my understanding of Javascript Index and error checking of arguments in all the functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "author": "Deep Deven Manek 20009220",
+  "license": "ISC"
+}

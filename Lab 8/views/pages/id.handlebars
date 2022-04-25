@@ -1,0 +1,55 @@
+<article>
+{{#if show.name}}
+<h1>{{show.name}}</h1>
+{{else}}
+<h1>N/A</h1>
+{{/if}}
+    {{#if show.image.medium}}
+    <img alt="{{show.name}}" src={{show.image.medium}}>
+    {{else}}
+    <img alt="{{show.name}}" src="https://previews.123rf.com/images/pavelstasevich/pavelstasevich1902/pavelstasevich190200120/124934975-no-image-available-icon-vector-flat.jpg">
+    {{/if}}
+    <dl>
+      <dt>Language</dt>
+      {{#if show.language}}
+      <dd>{{show.language}}</dd>
+      {{else}}
+      <dd>N/A</dd>
+      {{/if}}
+
+      <dt>Genres</dt>
+      <dd>
+        <ul>
+        {{#if show.genres}}
+        {{#each show.genres}}
+          <li>{{this}}</li>
+        {{/each}} 
+        {{else}}
+        <li>N/A</li>
+        {{/if}}
+        </ul>
+      </dd>
+
+    <dt>Average Rating</dt>
+    {{#if show.rating.average}}
+    <dd>{{show.rating.average}}</dd>
+    {{else}}
+    <dd>N/A</dd>
+    {{/if}}
+
+    <dt>Network</dt>
+    {{#if show.network.name}}
+    <dd>{{show.network.name}}</dd>
+    {{else}}
+    <dd>N/A</dd>
+    {{/if}}
+
+    <dt>Summary</dt>
+    {{#if show.summary}}
+    <dd>{{{show.summary}}}</dd>
+    {{else}}
+    <dd>N/A</dd>
+    {{/if}}
+    
+  </dl>
+  </article>

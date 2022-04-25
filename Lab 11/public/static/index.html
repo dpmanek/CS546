@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Show Finder</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Show Finder</h1>
+    </header>
+    
+ <div class="container">
+
+      <!-- A form with an id of searchForm. -->
+      <form id="searchForm">
+	
+        <!-- A label with a for attribute referencing your input -->
+        <label for='search_term'>
+            Show Name :
+        </label>
+    
+        <!-- A text input with an id of search_term. -->
+            <input
+            type='text'
+            id='search_term'
+            name='search_term'
+            required
+        />
+        <br/>
+        <br/>
+        <!-- A button to submit the form -->
+        <button  class="button-5" type="submit" value="Submit">Submit</button>
+    
+        </form>
+
+        <div id="error-div" hidden>
+            <h3>Errors</h3>
+            <ul id="errors">
+            
+            </ul>
+        </div>
+
+
+    <!-- An empty unordered list with an id of showList that is initially hidden.   -->
+     <ul id="showList" hidden>
+         
+    </ul>
+    
+    <!-- A div with an id of show that is initially hidden. -->
+   <div id="show" hidden>
+
+   </div>
+
+
+
+    <!-- A link that links back to the "/" route with the text "Back to All Shows" and that has an id of homeLink -->
+    <a href='/' id="homeLink" hidden>Back to All Shows</a>
+    
+   
+
+</div>
+
+    <footer class="footer">
+        
+            <p>Name: Deep Manek</p>
+            <p>Student ID: 20009220</p>
+            <p>Full Stack Developer</p>
+        
+    </footer>
+
+
+<script src="public/js/script.js"></script>
+
+</body>
+</html>

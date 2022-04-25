@@ -1,0 +1,87 @@
+const express = require('express');
+const router = express.Router();
+const axios = require('../data/axios');
+
+router.get('/', async (req, res) => {
+	try {
+		res.render('pages/form', { title: 'Show Finder' });
+	} catch (e) {
+		res.status(404).json({ error: e });
+	}
+});
+
+router.post('/searchshows', async (req, res) => {
+	let shows = req.body;
+//	console.log(shows);
+	let errors = [];
+	//shows.showSearchTerm = shows.showSearchTerm.trim();
+	if (!shows.showSearchTerm.trim()) {
+		errors.push('No showname entered');
+	}
+	if (errors.length > 0) {
+		res.render('pages/form', {
+			errors: errors,
+			hasErrors: true,
+			oldData: shows,
+			title: 'Show Finder',
+		});
+		return;
+	}
+	try {
+		let data = await axios.axiosAPI(
+			`http://api.tvmaze.com/search/shows?q=${shows.showSearchTerm}`
+		);
+		//console.log(data);
+		if (!data || data.length === 0) {
+			res.status(400).render('pages/error', {
+				title: 'Error',
+				error: 'No such shows found',
+				class: 'error',		
+			});
+			return;
+		}
+		let finalShows = data.slice(0, 5);
+		//console.log(finalShows[0]);
+
+		res.render('pages/searchShows', {
+			title: 'Shows Found',
+			shows: finalShows,
+			showSearchTerm:shows.showSearchTerm
+		});
+	} catch (e) {
+		res.status(400).render('pages/error', {
+			title: 'Error',
+			error: 'No such shows found',
+			class: 'error',
+		});
+	}
+});
+
+router.get('/show/:id', async (req, res) => {
+	let id = req.params.id;
+	try{
+		let data = await axios.axiosAPI(`http://api.tvmaze.com/shows/${id}`);
+		console.log(data)
+		if (!data || data.length === 0) {
+			res.status(404).render('pages/error', {
+				title: 'Error',
+				error: 'No such show exist',
+				class: 'error',		
+			});
+			return;
+		}
+		res.render('pages/id', {
+			title: data.name,
+			show: data,
+		});
+	}
+	catch(e){
+		res.status(404).render('pages/error', {
+			title: 'Error',
+			error: 'No such show exist',
+			class: 'error-not-found',		
+		});
+	}
+
+});
+module.exports = router;

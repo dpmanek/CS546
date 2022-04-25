@@ -1,0 +1,15 @@
+{
+  "name": "cs-546-lab-11",
+  "version": "1.0.0",
+  "description": "AJAX",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Deep Deven Manek 20009220",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

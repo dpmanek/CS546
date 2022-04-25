@@ -1,0 +1,16 @@
+{
+	"name": "cs-546-lab-4",
+	"version": "1.0.0",
+	"description": "Understanding MongoDB",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js"
+	},
+	"author": "Deep Deven Manek 20009220",
+	"license": "ISC",
+	"dependencies": {
+		"mongodb": "^4.3.1"
+	},
+	"devDependencies": {}
+}

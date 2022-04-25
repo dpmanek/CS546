@@ -1,0 +1,16 @@
+{
+	"name": "cs-546-lab-5",
+	"version": "1.0.0",
+	"description": "Mongo and Express clubbed",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app.js"
+	},
+	"author": "Deep Deven Manek 20009220",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.3",
+		"mongodb": "^4.4.0"
+	}
+}
